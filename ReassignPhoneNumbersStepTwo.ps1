@@ -1,4 +1,4 @@
-Connect-MicrosftTeams
+Connect-MicrosoftTeams
 
 #First, we read the source csv file 
 $Targetusers = read-host "Enter the path for the CSV file that has the list of users with the corresponding phonen numbers"
