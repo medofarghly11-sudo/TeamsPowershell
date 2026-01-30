@@ -7,5 +7,7 @@ $phonenumbertype = read-host "Enter the phonenumber type. Please choose between 
 
 #loop through each user and assign the phone numbers
 foreach ($Targetuser in $Targetusers) {
-Set-CsPhoneNumberAssignment -PhoneNumber $Targetuser.lineuri -Identity $Targetuser.userprincipalname -phonenumbertype $phonenumbertype
+$phonenumber = $Targetuser.lineuri
+$phonenumber -replace '^tel:', ''
+Set-CsPhoneNumberAssignment -PhoneNumber $Phonenumber -Identity $Targetuser.userprincipalname -phonenumbertype $phonenumbertype
 }
